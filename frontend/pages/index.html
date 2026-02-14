@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background-color: #121212;
+        color: #fff;
+        display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 220px;
+        height: 100vh;
+        background: #1e1e1e;
+        padding: 20px;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 30px;
+        color: #00bcd4;
+    }
+
+    .sidebar ul {
+        list-style: none;
+    }
+
+    .sidebar ul li {
+        padding: 12px;
+        margin-bottom: 10px;
+        background: #2a2a2a;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .sidebar ul li:hover {
+        background: #00bcd4;
+    }
+
+    .sidebar a {
+        text-decoration: none;
+        color: white;
+        display: block;
+    }
+
+    /* Main Content */
+    .main {
+        flex: 1;
+        padding: 20px;
+    }
+
+    /* Navbar */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    /* Profile */
+    .profile {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .profile img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .dropdown {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background: #1f1f1f;
+        width: 180px;
+        border-radius: 8px;
+        display: none;
+        flex-direction: column;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .dropdown a {
+        padding: 12px;
+        text-decoration: none;
+        color: white;
+        border-bottom: 1px solid #333;
+        transition: 0.3s;
+    }
+
+    .dropdown a:hover {
+        background: #00bcd4;
+    }
+
+    /* Hero Section */
+    .hero {
+        background: #1e1e1e;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        text-align: center;
+    }
+
+    .hero h1 {
+        margin-bottom: 15px;
+        color: #00bcd4;
+    }
+
+    .hero p {
+        margin-bottom: 25px;
+        color: #ccc;
+    }
+
+    .btn {
+        background: #00bcd4;
+        padding: 12px 25px;
+        border-radius: 6px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        opacity: 0.8;
+    }
+
+    .btn {
+    display: inline-block;
+    margin-top: 15px;
+    background: #00bcd4;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>Home</h2>
+    <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="analytics.html">Analytics</a></li>
+        <li><a href="reports.html">Reports</a></li>
+        <li><a href="settings.html">Settings</a></li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Home</h1>
+
+        <div class="profile" onclick="toggleDropdown()">
+            <img src="https://i.pravatar.cc/40" alt="Profile">
+
+            <div class="dropdown" id="dropdownMenu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="analytics.html">Analytics</a>
+                <a href="reports.html">Reports</a>
+                <a href="settings.html">Settings</a>
+                <a href="logout.html">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="cards">
+
+    <div class="card">
+        <h3>💰 Budgeting 101</h3>
+        <p>Learn how to track expenses, reduce unnecessary spending, and build a sustainable monthly budget.</p>
+        <a class="btn" href="#">Read More</a>
+    </div>
+
+    <div class="card">
+        <h3>📈 Smart Investing Basics</h3>
+        <p>Understand risk levels, diversification, and how to grow your wealth over time.</p>
+        <a class="btn" href="#">Read More</a>
+    </div>
+
+    <div class="card">
+        <h3>🏦 Emergency Fund Guide</h3>
+        <p>Why every person needs a financial safety net and how to build one step-by-step.</p>
+        <a class="btn" href="#">Read More</a>
+    </div>
+
+    <div class="card">
+        <h3>💳 Managing Debt Wisely</h3>
+        <p>Strategies to pay off loans faster and improve your financial health.</p>
+        <a class="btn" href="#">Read More</a>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+function toggleDropdown() {
+    const dropdown = document.getElementById("dropdownMenu");
+    dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+}
+
+window.onclick = function(event) {
+    if (!event.target.closest('.profile')) {
+        document.getElementById("dropdownMenu").style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
